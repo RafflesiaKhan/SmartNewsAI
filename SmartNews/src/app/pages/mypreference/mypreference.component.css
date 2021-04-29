@@ -1,0 +1,135 @@
+.input-hidden {
+  position: absolute;
+  left: -9999px;
+}
+
+input[type=radio]:checked + label>img {
+  border: 1px solid #fff;
+  box-shadow: 0 0 3px 3px #090;
+}
+
+/* Stuff after this is only to make things more pretty */
+input[type=radio] + label>img {
+  border: 1px dashed #444;
+  width: 150px;
+  height: 150px;
+  transition: 500ms all;
+}
+
+input[type=radio]:checked + label>img {
+  transform:
+    rotateZ(-10deg)
+    rotateX(10deg);
+}
+
+/*
+ | //lea.verou.me/css3patterns
+ | Because white bgs are boring.
+*/
+html {
+  background-color: #fff;
+  background-size: 100% 1.2em;
+  background-image:
+    linear-gradient(
+      90deg,
+      transparent 79px,
+      #abced4 79px,
+      #abced4 81px,
+      transparent 81px
+    ),
+    linear-gradient(
+      #eee .1em,
+      transparent .1em
+    );
+}
+.question-container{
+  margin: auto;
+  width:90%;
+  background-color: white;
+  min-height: 250px;
+  padding: 30px;
+}
+
+.question{
+
+  padding:30px;
+}
+.btn-container{
+  padding:30px 0px;
+  bottom:0;
+}
+.card{
+  position:relative;
+  margin:20px auto;
+  border-radius:2px;
+  width:450px;
+  height:165px;
+  box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+  transition:box-shadow 1s;
+  overflow:hidden;
+}
+.card .text{
+  padding-left:24px;
+  padding-top:5px;
+}
+.card .text:first-of-type {
+  padding-top:8px;
+}
+.title{
+  color:rgba(0,0,0,0.87);
+  font-size:22px;
+  padding-top:16px;
+}
+
+
+.card img{
+  height:165px;
+  width:auto;
+  position:absolute;
+  top:0;
+  right:0;
+}
+
+.card .rateToggle{
+  bottom:-45px;
+}
+
+.rating {
+  border: none;
+  float: left;
+}
+
+.rating > input { display: none; }
+.rating > label:before {
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating > .half:before {
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > label {
+  color: #ddd;
+  float: right;
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  }
+#card:hover{
+  box-shadow:0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12),0 5px 5px -3px rgba(0,0,0,.2);
+  transition:box-shadow 1s;
+}
+

@@ -1,0 +1,19 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<ul class="nav navbar-nav hidden-md-down" *ngIf="false">
+  <li class="nav-item">
+    <a class="nav-link navbar-toggler sidebar-toggle" href="#">&#9776;</a>
+  </li>
+  <li class="nav-item px-1">
+    <a class="nav-link" [routerLink]="['/home']">Home</a>
+
+    <ul>
+      <li class="nav-item px-1">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/home/preference']"><i class="icon-puzzle"></i>My Preference</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>
+

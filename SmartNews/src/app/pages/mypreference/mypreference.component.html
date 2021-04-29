@@ -1,0 +1,269 @@
+
+
+<div class="row wrapper bgded" style="margin-bottom: 60px; height:350px;background-image:url('./../../../assets/img/background-01.jpg');">
+  <div class="col-sm-4" style="color:white">
+    <h2>My Preference</h2>
+  </div>
+  <div class="col-sm-8" style="
+    color: #FFF;
+    background-color: rgba(15,132,170,.65);
+    height: 100%;
+">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Welcome!</h2>
+        <p>To provide news of your interest we need to know you better,therefore, a few things should be thought through before you proceed.</p>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 30px;">
+      <div class="col-sm-12" style="margin-right:15px;">
+        <button class="btn btn-primary btn-lg" (click)="getstarted =true" >Get Started</button>
+        <span style="margin-left: 10px;">Need guidance? Browse Inetrest for inspiration.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper row3" *ngIf="!getstarted">
+
+  <ul class="nospace group latest row">
+    <li class="col-lg-3">
+      <figure><img src="./../../../assets/img/sports.jpg" alt="Sports" style="  width: 300px;
+    height: 200px;">
+        <figcaption><strong>03</strong> Apr</figcaption>
+      </figure>
+      <h3 class="font-x1 heading">Sports</h3>
+      <p>If you are interested about sports, this news portal wound look for sports related news from all popular sources e.g. ESPN, BBC sports etc. and will present for you.</p>
+      <p><a href="http://www.os-templates.com/free-website-templates">Rate Sports</a></p>
+    </li>
+    <li class="col-lg-3">
+      <figure><img src="./../../../assets/img/health.jpg" alt="Health" style="  width: 300px;
+    height: 200px;">
+        <figcaption><strong>31</strong> Mar</figcaption>
+      </figure>
+      <h3 class="font-x1 heading">Health</h3>
+      <p>If you are interested about health, this news portal wound look for health related news from all popular sources e.g. Yahoo health, BBC Food etc. and will present for you.</p>
+      <p><a href="http://www.os-templates.com/free-website-templates">Rate Health</a></p>
+    </li>
+    <li class="col-lg-3">
+      <figure><img src="./../../../assets/img/entertainment.jpg" alt="Entertainment" style="  width: 300px;
+    height: 200px;">
+        <figcaption><strong>18</strong> Mar</figcaption>
+      </figure>
+      <h3 class="font-x1 heading">Entertainment</h3>
+      <p>If you are interested about entertainment, this news portal wound look for health related news from all popular sources e.g. Yahoo , BBC , The Gurdian etc. and will present for you.</p>
+      <p><a href="http://www.os-templates.com/free-website-templates">Rate Entertainemnt »</a></p>
+    </li>
+    <li class="col-lg-3">
+      <figure><img src="./../../../assets/img/finance.jpg" alt="Finance" style="  width: 300px;
+    height: 200px;">
+        <figcaption><strong>03</strong> Apr</figcaption>
+      </figure>
+      <h3 class="font-x1 heading">Finance</h3>
+      <p>If you are interested about finance, this news portal wound look for sports related news from all popular sources e.g. Yahoo Business, BBC, Finance Times  etc. and will present for you.</p>
+      <p><a href="http://www.os-templates.com/free-website-templates">Rate Finance >></a></p>
+    </li>
+  </ul>
+</div>
+
+
+<div class="wrapper row3" *ngIf="getstarted">
+  <form [formGroup]="myprefereceForm"  class="ui form">
+
+  <div class="question" *ngIf="questionno==0">
+    <h2> Your Age ?</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <label class="radio-inline custom-radio nowrap">
+          <input type="radio" name="ageGroup" id="inlineRadio1" value="18" formControlName="ageGroup" required>
+          <span ><= 18</span>
+        </label>
+      </div>
+      <div class="col-md-4">
+        <label class="radio-inline custom-radio nowrap">
+          <input type="radio" name="ageGroup" id="inlineRadio2" value="40" formControlName="ageGroup" required>
+          <span>>18 and <40</span>
+        </label>
+      </div>
+      <div class="col-md-4">
+        <label class="radio-inline custom-radio nowrap">
+          <input type="radio" name="ageGroup" id="inlineRadio3" value="50" formControlName="ageGroup" required>
+          <span>40+</span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="question" *ngIf="questionno==1">
+    <h2> Your Highest Education ?</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <label class="radio-inline custom-radio nowrap">
+          <input type="radio" name="educationGroup" id="inlineRadio4" value="college" formControlName="educationGroup" required>
+          <span >College</span>
+        </label>
+      </div>
+      <div class="col-md-4">
+        <label class="radio-inline custom-radio nowrap">
+          <input type="radio" name="educationGroup" id="inlineRadio5" value="BSc" formControlName="educationGroup" required>
+          <span>Bachelor</span>
+        </label>
+      </div>
+      <div class="col-md-4">
+        <label class="radio-inline custom-radio nowrap">
+          <input type="radio" name="educationGroup" id="inlineRadio6" value="Msc" formControlName="educationGroup" required>
+          <span>Masters</span>
+        </label>
+      </div>
+      <div class="col-md-4">
+        <label class="radio-inline custom-radio nowrap">
+          <input type="radio" name="educationGroup" id="inlineRadio7" value="PhD" formControlName="educationGroup" required>
+          <span>PhD</span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="question row" *ngIf="questionno==2">
+    <h2> Your Location ?</h2>
+    <div class="col-md-4">
+      <label class="radio-inline custom-radio nowrap">
+        <input type="radio" name="locationGroup" id="inlineRadio50" value="Asia" formControlName="locationGroup" required>
+        <span>Asia</span>
+      </label>
+    </div>
+    <div class="col-md-4">
+      <label class="radio-inline custom-radio nowrap">
+        <input type="radio" name="locationGroup" id="inlineRadio40" value="Europe" formControlName="locationGroup" required>
+        <span>Europe</span>
+      </label>
+    </div>
+    <div class="col-md-4">
+      <label class="radio-inline custom-radio nowrap">
+        <input type="radio" name="locationGroup" id="inlineRadio30" value="USA" formControlName="locationGroup" required>
+        <span>USA</span>
+      </label>
+    </div>
+    <div class="col-md-4">
+      <label class="radio-inline custom-radio nowrap">
+        <input type="radio" name="locationGroup" id="inlineRadio20" value="MEA" formControlName="locationGroup" required>
+        <span>MEA</span>
+      </label>
+    </div>
+  </div>
+
+
+  <div class="question" *ngIf="questionno==3">
+    <h2> Your Sex ?</h2>
+    <div class="col-md-4">
+      <label class="radio-inline custom-radio nowrap">
+        <input type="radio" name="sexGroup" id="inlineRadio8" value="Male"  formControlName="sexGroup" required>
+        <span>Male</span>
+      </label>
+    </div>
+    <div class="col-md-4">
+      <label class="radio-inline custom-radio nowrap">
+        <input type="radio" name="sexGroup" id="inlineRadio9" value="Female" formControlName="sexGroup" required>
+        <span>Female</span>
+      </label>
+    </div>
+    <div class="col-md-4">
+      <label class="radio-inline custom-radio nowrap">
+        <input type="radio" name="sexGroup" id="inlineRadio10" value="Others" sportRatingrequired>
+        <span>Others</span>
+      </label>
+    </div>
+  </div>
+
+  <div class="row question" *ngIf="questionno==4">
+    <h2> Rate each category</h2>
+    <div *ngFor = "let i of categories" class="col-lg-6">
+      <div class="card" >
+
+
+        <div class="title" class="text">{{i.name}}</div>
+
+        <fieldset class="rating">
+          <input type="checkbox" id="star5" name="{{i.name}}Rating" value="5" formControlName="{{i.name}}Rating"/><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+          <input type="checkbox" id="star4half" name="{{i.name}}Rating" value="4 and a half" formControlName="{{i.name}}Rating" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+          <input type="checkbox" id="star4" name="{{i.name}}Rating" value="4" formControlName="{{i.name}}Rating"/><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+          <input type="checkbox" id="star3half" name="{{i.name}}Rating" value="3 and a half" formControlName="{{i.name}}Rating"/><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+          <input type="checkbox" id="star3" name="{{i.name}}Rating" value="3" formControlName="{{i.name}}Rating"/><label class = "full" for="star3" title="Meh - 3 stars"></label>
+          <input type="checkbox" id="star2half" name="{{i.name}}Rating" value="2 and a half" formControlName="{{i.name}}Rating"/><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+          <input type="checkbox" id="star2" name="{{i.name}}Rating" value="2" formControlName="{{i.name}}Rating"/><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+          <input type="checkbox" id="star1half" name="{{i.name}}Rating" value="1 and a half" formControlName="{{i.name}}Rating"/><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+          <input type="checkbox" id="star1" name="{{i.name}}Rating" value="1" formControlName="{{i.name}}Rating"/><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+          <input type="checkbox" id="starhalf" name="{{i.name}}Rating" value="half" formControlName="{{i.name}}Rating"/><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+        </fieldset>
+        <img src="./../../../assets/img/{{i}}.jpg" alt="cover" style="overflow: hidden;
+    width: 200px;
+    height: 200px;">
+      </div>
+    </div>
+  </div>
+
+  <div class="row question" *ngIf="questionno==5">
+    <h2> Rate each category</h2>
+    <div *ngFor = "let j of sources" class="col-lg-6">
+      <div class="card" >
+
+
+        <div class="title" class="text">{{j}}</div>
+
+        <fieldset class="rating">
+          <input type="checkbox" id="star15" name="{{j}}rating" value="5" formControlName="{{j}}rating"/><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+          <input type="checkbox" id="star14half" name="{{j}}rating" value="4 and a half" formControlName="{{j}}rating"/><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+          <input type="checkbox" id="star14" name="{{j}}rating" value="4" formControlName="{{j}}rating"/><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+          <input type="checkbox" id="star13half" name="{{j}}rating" value="3 and a half" formControlName="{{j}}rating"/><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+          <input type="checkbox" id="star13" name="{{j}}rating" value="3" formControlName="{{j}}rating"/><label class = "full" for="star3" title="Meh - 3 stars"></label>
+          <input type="checkbox" id="star12half" name="{{j}}rating" value="2 and a half" formControlName="{{j}}rating"/><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+          <input type="checkbox" id="star12" name="{{j}}rating" value="2" formControlName="{{j}}rating"/><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+          <input type="checkbox" id="star11half" name="{{j}}rating" value="1 and a half" formControlName="{{j}}rating"/><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+          <input type="checkbox" id="star11" name="{{j}}rating" value="1" formControlName="{{j}}rating"/><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+          <input type="checkbox" id="star0half" name="{{j}}rating" value="half" formControlName="{{j}}rating"/><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+        </fieldset>
+        <img src="./../../../assets/img/{{j}}.jpg" alt="cover" style="overflow: hidden;
+    width: 200px;
+    height: 200px;">
+      </div>
+    </div>
+  </div>
+
+
+  <h2 *ngIf="questionno>=6">Please select one image from each pair </h2>
+  <div class="question" *ngIf="questionno==6">
+  <div *ngFor = "let i of images">
+  <input
+    type="radio" name="emotion"
+    id="sad" class="input-hidden" />
+  <label for="sad">
+    <img
+      src="//placekitten.com/150/150"
+      alt="I'm sad" />
+  </label>
+
+  <input
+    type="radio" name="emotion"
+    id="happy" class="input-hidden" />
+  <label for="happy">
+    <img
+      src="//placekitten.com/151/151"
+      alt="I'm happy" />
+  </label>
+  </div>
+  </div>
+<div class="row btn-container" style="display: block;
+    padding: 15px 45px;">
+  <button class="btn btn-primary" (click)="next()" >Next</button>
+
+  <button class="btn btn-primary" *ngIf="questionno>8" type="submit" (click)="save(myprefereceForm.value, myprefereceForm.valid)">Save</button>
+</div>
+
+  </form>
+</div>
+
+
+
+

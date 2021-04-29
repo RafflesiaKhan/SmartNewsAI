@@ -1,0 +1,16 @@
+<div class="ts-grid-row-fluid whiteScheme" style="border-bottom:2px solid #D8D8D8;">
+  <div id="navcontainer">
+    <ul role="menu" aria-label="Select View">
+
+      <li *ngFor="let tab of tabs" role="menuitem" tabindex="-1" class="landingTab" [class.selected]="currentTab === tab" [attr.aria-label]="currentTab.title" (click)="changetab(tab)">
+        <span>{{tab.title}}</span>
+      </li>
+    </ul>
+
+  </div>
+</div>
+<!-- container class to load the dashboard tabs -->
+<div class="main-content-container darkScheme">
+
+
+</div>
